@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Results</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<h2>{{ session['username'] }} - My Results</h2>
+<a href="/quiz_selection">Back to Quiz List</a> | <a href="/logout">Logout</a>
+<table border="1" align="center">
+  <tr><th>Quiz</th><th>Score</th></tr>
+  {% for r in results %}
+  <tr>
+    <td>{{ r['quiz_name'] }}</td>
+    <td>{{ r['score'] }}</td>
+  </tr>
+  {% endfor %}
+</table>
+</body>
+</html>

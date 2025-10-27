@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Quiz</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<h2>Welcome, {{ session['username'] }}</h2>
+<h3>Select a Quiz:</h3>
+<ul>
+  {% for q in quizzes %}
+    <li><a href="{{ url_for('quiz', quiz_id=q['id']) }}">{{ q['name'] }}</a></li>
+  {% endfor %}
+</ul>
+<a href="/user_results">My Previous Results</a><br>
+<a href="/logout">Logout</a>
+</body>
+</html>
